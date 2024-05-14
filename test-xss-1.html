@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page de test XSS</title>
+</head>
+<body>
+    <h1>Bienvenue sur notre site !</h1>
+    <p>Bonjour, <span id="username"></span> !</p>
+    
+    <script>
+        // Récupère le nom d'utilisateur depuis l'URL
+        var username = window.location.hash.substr(1);
+        
+        // Affiche le nom d'utilisateur dans la page
+        document.getElementById('username').innerHTML = username;
+    </script>
+</body>
+</html>
